@@ -14,7 +14,7 @@ function urlencode {
             return
         }
         if ([string]::IsNullOrEmpty($InputObject)) { return }
-        [System.Uri]::EscapeDataString($InputObject)
+        [System.Net.WebUtility]::UrlEncode($InputObject)
     }
 }
 
@@ -30,7 +30,7 @@ function urldecode {
             return
         }
         if ([string]::IsNullOrEmpty($InputObject)) { return }
-        [System.Uri]::UnescapeDataString($InputObject)
+        [System.Net.WebUtility]::UrlDecode($InputObject)
     }
 }
 
